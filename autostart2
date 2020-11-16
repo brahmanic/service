@@ -1,0 +1,7 @@
+$Service = 'ServiceName'
+while ((Get-Service $Service).Status -eq 'Stopped') 
+{
+    Start-Service $Service -ErrorAction SilentlyContinue
+    Start-Sleep 10
+} 
+Return "$($Service) has STARTED"
